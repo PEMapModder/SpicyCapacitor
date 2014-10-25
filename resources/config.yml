@@ -1,0 +1,36 @@
+---
+# This is the file where you configurate SpicyCapacitor.
+# Database
+## The type of database to use. Options are "sqlite3" and "mysql".
+database: "sqlite3"
+sqlite3:
+  # path to save database at
+  database path: database.sq3
+mysql:
+  # the connection details for the MySQL database
+  connection:
+    address: "127.0.0.1"
+    port: 3306
+    username: "guest"
+    password: ""
+    database: SpicyCapacitor
+  # all tables created by SpicyCapacitor will start with this.
+  table prefix: "SpicyCapacitor_"
+# Editing paths:
+## Include paths
+### put the path of the file/folder relative to the folder where you found this config.yml file.
+### for example, for this file, it is "config.yml"
+### if you want to go outside but still relative to this folder, use ..
+### folders will be automatically created if necessary.
+## Absolute paths
+### put the path of the file/folder directly after starting with "file://"
+### if you are on Windows, it still has to be "file://" but after it both slashes and backslashes are allowed.
+## Resource paths
+### if your path is inside the plugin resources folder, put the path of the file/folder relative to
+###     the plugin resources folder after a prefix of "res://". note that you are not supposed to save files there, but only read from.
+## Zip and Phar paths
+### put the absolute path of the archive after "zip://" or "phar://", and then a slash, and then the paths inside the archive.
+## Other schemes
+### such as TCP, HTTP, etc. Supported schemes can be found at http://hk1.php.net/manual/en/wrappers.php
+### note that data is written and read directly without extra protocols.
+...

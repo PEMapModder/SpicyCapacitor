@@ -1,0 +1,52 @@
+name: SpicyCapacitor
+author: PEMapModder
+version: 1.0.0
+api: [1.5.0]
+main: pemapmodder\spicycapacitor\SpicyCapacitor
+prefix: SpicyCap
+permissions:
+  spicycap:
+    description: SpicyCapacitor parent permission node
+    default: false
+    children:
+      spicycap.report:
+        description: Allows submitting reports
+        default: true
+        children:
+          spicycap.report.chat:
+            description: Allows submitting chat reports
+            default: true
+          spicycap.report.motion:
+            description: Allows submitting motion reports
+      spicycap.reportmng:
+        description: Allows managing reports
+        default: op
+        children:
+          spicycap.reportmng.read:
+            description: Allows reading reports
+            deafult: op
+          spicycap.reportmng.assign:
+            description: Allows (un)assigning reports to self
+            default: op
+          spicycap.reportmng.resolve:
+            description: Allows (un)resolving reports
+            default: op
+          spicycap.reportmng.close:
+            description: Allows closing reports
+            default: op
+      spicycap.warning:
+        description: Allows managing warning points
+        default: op
+        children:
+          spicycap.warning.issue:
+            description: Allows issuing warnings
+            default: op
+          spicycap.warning.view:
+            description: Allows viewing warnings
+            default: op
+            children:
+              spicycap.warning.view.self:
+                description: Allows viewing own's warnings
+                default: true
+          spicycap.warning.rm:
+            description: Allows removing warnings
