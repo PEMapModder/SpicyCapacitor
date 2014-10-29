@@ -48,7 +48,7 @@ Chat logs contain the recent 50 lines of chat,
 and motion logs contain the recent 60 seconds of
 a player's motion. For op info, use `/scopinfo`.
 Use the /report command to send a report:
-`/report chat|motion <player> [message ...]
+`/report chat|motion <player> [message ...]`
 EOM
 				);
 				break;
