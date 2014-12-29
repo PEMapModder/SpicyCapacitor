@@ -18,6 +18,9 @@ permissions:
             default: true
           spicycap.report.motion:
             description: Allows submitting motion reports
+      spicycap.exceedreportlimit:
+        description: Allows exceeding report log size limits
+        default: false
       spicycap.reportmng:
         description: Allows managing reports
         default: op
@@ -25,6 +28,8 @@ permissions:
           spicycap.reportmng.read:
             description: Allows reading reports
             deafult: op
+          spicycap.reportmng.list:
+            description: Allows using the /replist command to list reports
           spicycap.reportmng.assign:
             description: Allows (un)assigning reports to self
             default: op
@@ -44,9 +49,11 @@ permissions:
           spicycap.warning.view:
             description: Allows viewing warnings
             default: op
-            children:
-              spicycap.warning.view.self:
-                description: Allows viewing own's warnings
-                default: true
           spicycap.warning.rm:
             description: Allows removing warnings
+            default: op
+      spicycap.myreports:
+        description: Allows viewing own's reports
+        default: true
+      spicycap.mywarnings:
+        description: Allows viewing own's received warnings

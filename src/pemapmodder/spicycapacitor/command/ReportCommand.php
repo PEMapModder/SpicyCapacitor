@@ -10,7 +10,7 @@ use pocketmine\command\PluginIdentifiableCommand;
 class ReportCommand extends Command implements PluginIdentifiableCommand{
 	private $plugin;
 	public function __construct(SpicyCapacitor $plugin){
-		parent::__construct("report", "Report a player", "use '/sc help report' for help", ["rep"]);
+		parent::__construct("report", "Report a player", "use '/sc report' for help", ["rep"]);
 		$this->setPermission("spicycap.report");
 		$this->plugin = $plugin;
 	}
@@ -18,6 +18,6 @@ class ReportCommand extends Command implements PluginIdentifiableCommand{
 		return $this->plugin;
 	}
 	public function execute(CommandSender $sender, $alias, array $args){
-		// TODO: Implement execute() method.
+
 	}
 }

@@ -12,6 +12,8 @@ class Configuration{
 	private $plugin;
 	/** @var Config */
 	private $config;
+	private $chatLogger;
+	private $motionLogger;
 	public function __construct(SpicyCapacitor $plugin){
 		$this->plugin = $plugin;
 		$this->config = $plugin->getConfig();
@@ -40,6 +42,19 @@ class Configuration{
 				throw new \RuntimeException(TextFormat::YELLOW . "Unknown database type $type" . TextFormat::RED);
 		}
 
+	}
+	public function getChatLogger(){
+		if(!isset($this->chatLogger)){
+			$className = $this->config->get("chat logger");
+			if(!class_exists($className, true)){
+				throw new \RuntimeException("$className cannot be found");
+			}
+			if(!is_subclass_of($className, ChatLogger::class)){
+				throw new \RuntimeException("$className must implement " . ChatLogger::class);
+			}
+			$this->chatLogger = new $className($this->plugin);
+		}
+		return $this->chatLogger;
 	}
 	public function evalPath($path){
 		$pos = strpos($path, "://");

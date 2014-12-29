@@ -16,7 +16,18 @@ mysql:
     database: SpicyCapacitor
   # all tables created by SpicyCapacitor will start with this.
   table prefix: "SpicyCapacitor_"
-# Editing paths:
+
+# Loggers
+# If you are using plugins that support SpicyCapacitor and give an alternative method of chat/motion logging, change the class names below to other plugins' logger class names
+chat logger: pemapmodder\spicycapacitor\DefaultChatLogger
+motion logger: pemapmodder\spicycapacitor\DefaultMotionLogger
+
+# Limits
+# limit the size of reports
+chat limit: 60 # allow reports to contain at most 60 seconds of chat log
+motion limit: 30 # allow reports to contain at most 30 seconds of motion log
+
+# Editing filepaths:
 ## Include paths
 ### put the path of the file/folder relative to the folder where you found this config.yml file.
 ### for example, for this file, it is "config.yml"
